@@ -1,5 +1,6 @@
 from selenium.webdriver import Chrome
 from pageobjects import App, Pages
+from helpers import poll_server
 
 # test data
 maybe_wanted_product = 'Tesla Model X'
@@ -10,6 +11,7 @@ final_products = [really_wanted_product, eventually_wanted_product]
 
 class TestPlacingOrder:
     def setup_method(self):
+        poll_server()
         self.wd = Chrome()
         self.app = App(webdriver=self.wd)
         self.app.load()

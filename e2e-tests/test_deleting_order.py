@@ -1,11 +1,14 @@
 from selenium.webdriver import Chrome
 from pageobjects import App, Pages
+from helpers import poll_server
 
 # test data
 products = ['Tesla Model X', 'Tesla Model 3']
 
 class TestDeletingOrder:
     def setup_method(self):
+        poll_server()
+
         # place an order and kill the browser
         wd = Chrome()
         app = App(webdriver=wd)

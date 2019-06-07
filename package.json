@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "start:server": "node ./server/index.js",
     "e2e:install": "./e2e-req-install.sh",
-    "e2e:test": "source venv/bin/activate && pytest e2e-tests/"
+    "e2e:test": "source venv/bin/activate && pytest e2e-tests/ --html=e2e-test-report.html --self-contained-html"
   },
   "husky": {
     "hooks": {
